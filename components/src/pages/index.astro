@@ -1,44 +1,33 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle:string = "TQA";
+// Component Import
+import Counter from '../components/Counter';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+			body {
+				padding: 2rem;
+			}
+		</style>
 	</head>
 	<body>
-		<BaseLayout pageTitle={pageTitle}>
-			<div class="hero">
-				<div class="hero-text">
-					<h1>Bienvenido</h1>
-					<p>Trabajos Que Ayudan</p>
-				</div>
-			</div>
-			<section class="featured-products">
-				<h2>Featured Products</h2>
-				<div class="product">
-					<div class="product-item">
-						<img src="dog-food.jpg" alt="Dog Food">
-						<h3>Dry Dog Food</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-					<div class="product-item">
-						<img src="cat-food.jpg" alt="Cat Food">
-						<h3>Cat Food</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-					<div class="product-item">
-						<img src="bird-food.jpg" alt="Bird Food">
-						<h3>Bird Food</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-			</section>
-		<BaseLayout />
+		<main>
+			<Counter client:visible>
+				<h1>Hello, Solid!</h1>
+			</Counter>
+		</main>
 	</body>
 </html>
